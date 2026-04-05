@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Security.AccessControl;
 using System.Security.Cryptography.X509Certificates;
@@ -51,6 +52,16 @@ namespace G_NET_29_OOP_1
             //*write the code.
             //*run the project.
             #endregion
+
+            #region Q4:
+            //It is a separate project  contains reusable custom classes and data types,
+            //    and  does not have a Main method so, it cannot be run on its own.
+            //*Reusability
+            //* Organization
+            //* Maintenance
+
+            #endregion
+
         }
     }
 }
