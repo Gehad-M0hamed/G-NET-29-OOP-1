@@ -8,8 +8,7 @@ namespace G_NET_29_OOP_1
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
+        
             //Part 01 : 
             #region Q1 :
             //class: Reference Type,,is a blueprint.
@@ -62,6 +61,43 @@ namespace G_NET_29_OOP_1
 
             #endregion
 
+            #region Part 02 :
+        static void Main(string[] args)
+              {
+            Console.Write("Enter Movie Name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter Type (0:Standard, 1:VIP, 2:IMAX): ");
+            TicketType type = (TicketType)int.Parse(Console.ReadLine());
+
+            Console.Write("Enter Row (A, B, C): ");
+            char row = char.Parse(Console.ReadLine().ToUpper());
+
+            Console.Write("Enter Seat Number: ");
+            int seatNum = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter Price: ");
+            double price = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter Discount Amount: ");
+            double discount = double.Parse(Console.ReadLine());
+
+            Ticket userTicket = new Ticket(name, type, new SeatLocation(row, seatNum), price);
+
+            Console.WriteLine("\n--- Ticket Info ---");
+            userTicket.PrintTicket();
+            Console.WriteLine($"Total with Tax: {userTicket.CalcTotal(14):F2}");
+
+            Console.WriteLine("\n--- Applying Discount ---");
+            userTicket.ApplyDiscount(ref discount);
+
+            userTicket.PrintTicket();
+            Console.WriteLine($"Total with Tax: {userTicket.CalcTotal(14):F2}");
+            Console.WriteLine($"Remaining Discount: {discount}");
+
         }
+            #endregion
+
+       
     }
 }
